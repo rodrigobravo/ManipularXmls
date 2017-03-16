@@ -31,10 +31,8 @@ public class Copiar {
         
         File[] lista = diretorio.listFiles();
         File destino = new File (System.getProperty("user.home") + "\\desktop\\contador");
-        if (destino.exists()){
-            
-        }else{
-            destino.mkdir();
+        if (!destino.exists()){
+        destino.mkdir();
         }
         for (File lista1 : lista) {
              
@@ -43,14 +41,10 @@ public class Copiar {
             int mesArq = dataArq.getMonth()+1;
             File pastaAno = new File (System.getProperty("user.home") + "\\desktop\\contador" + "\\" + anoArq);
             File pastaMes = new File (System.getProperty("user.home") + "\\desktop\\contador" + "\\" + anoArq + "\\" + mesArq);
-            if (pastaAno.exists()){
-            
-            }else{
+            if (!pastaAno.exists()){
             pastaAno.mkdir();
              }
-            if (pastaMes.exists()){
-            
-            }else{
+            if (!pastaMes.exists()){
             pastaMes.mkdir();
              }
             String nomeArq = lista1.getName();
